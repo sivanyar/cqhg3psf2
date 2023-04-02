@@ -2,11 +2,11 @@
 
 This repository contains the IOP module for playing TSQ/TVB sound files with the PSF2 player.
 
-There are also several scriptss included that can be used to create PSF2 files.
+There are also several scripts included that can be used to create PSF2 files.
 
-Note that this is only for Playstation 2 games and is not compatible with Playstation 1 TSQ/TVB files.
+Note that this is only for PlayStation 2 games and is not compatible with PlayStation 1 TSQ/TVB files.
 
-For Playstation 1 games, use [tsq2psf](https://github.com/loveemu/tsq2psf) by loveemu.
+For PlayStation 1 games, use [tsq2psf](https://github.com/loveemu/tsq2psf) by loveemu.
 
 
 ## Requirements
@@ -20,13 +20,13 @@ For Playstation 1 games, use [tsq2psf](https://github.com/loveemu/tsq2psf) by lo
 
 ## Build
 
-With PS2DEV environment:
+With PS2DEV environment :
 
 ```sh
 cd ./src && make
 ```
 
-With Docker:
+With Docker :
 
 ```sh
 ./build-docker.ps1
@@ -36,7 +36,7 @@ With Docker:
 ## Usage
 
 1.  Extract `SNDMOD.IRX`, `*.TSQ`, `*.TVB` files from the game disc.
-2.  Put `SNDMOD.IRX` to this directory and execute the following:
+2.  Put `SNDMOD.IRX` to this directory and execute the following :
 
 ```sh
 ./scripts/fix-iopmod.ps1 -LiteralPath SNDMOD.IRX

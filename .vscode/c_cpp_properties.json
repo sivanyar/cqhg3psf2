@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "PS2IOP",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${env:PS2SDK}/iop/include",
+                "${env:PS2SDK}/common/include"
+            ],
+            "defines": [
+                "_IOP"
+            ],
+            "compilerPath": "${env:PS2DEV}/iop/bin/iop-gcc",
+            "compilerArgs": [
+                "-fno-builtin"
+            ],
+            "cStandard": "gnu99",
+            "cppStandard": "gnu++03"
+        }
+    ],
+    "version": 4
+}

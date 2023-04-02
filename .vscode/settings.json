@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.h": "c"
+  },
+  "files.exclude": {
+    "**/*.o": true,
+  },
+  "search.exclude": {
+    "**/*.irx": true,
+    "**/*.TSQ": true,
+    "**/*.TVB": true
+  }
+}

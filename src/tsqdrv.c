@@ -26,13 +26,13 @@ void tsqdrvWakeup(void *thid)
 }
 
 
-void tsqdrvDispData(u32 *buf, int len)
+void tsqdrvDispData(u32 *buf, size_t len)
 {
-  int i;
+  size_t i;
   
   printf("[");
-  for (i = 0; i < len; i++) {
-    if (i != 0) {
+  for (i = 0U; i < len; i++) {
+    if (i != 0U) {
       printf(" ");
     }
     printf("0x%X", (int)buf[i]);
@@ -116,7 +116,7 @@ int _start(int argc, const char *argv[])
   const u32 tvbaddr = 0x00000000U;
   const u32 tsqaddr = 0x00000000U;
   const char *devname = "host:/";
-  const size_t devnamelen = 6;
+  const size_t devnamelen = 6U;
 
   const char *tsqfile = "BGM.TSQ";
   const char *tvbfile = "BGM.TVB";
@@ -177,16 +177,16 @@ int _start(int argc, const char *argv[])
   printf("tsqdrv: loading music/wave data\n");
   memset(RpcTxBuf, 0, RPC_SIZE_BYTE);
   RpcTxBuf[0] = bank;
-  RpcTxBuf[1] = 0U;   // using the filepath
+  RpcTxBuf[2] = 0U;   // using the filepath
   strncpy((char *)&RpcTxBuf[3], devname, devnamelen);
-  strncpy((char *)&RpcTxBuf[3] + devnamelen, tvbfile, RPC_SIZE_BYTE - 9U - devnamelen);
+  strncpy((char *)&RpcTxBuf[3] + devnamelen, tvbfile, RPC_SIZE_BYTE - 0xDU - devnamelen);
   tsqdrvCallRpc(SNDMOD_TvbfTrns);
 
   memset(RpcTxBuf, 0, RPC_SIZE_BYTE);
   RpcTxBuf[0] = bank;
-  RpcTxBuf[1] = 0U;   // using the filepath
+  RpcTxBuf[2] = 0U;   // using the filepath
   strncpy((char *)&RpcTxBuf[3], devname, devnamelen);
-  strncpy((char *)&RpcTxBuf[3] + devnamelen, tsqfile, RPC_SIZE_BYTE - 9U - devnamelen);
+  strncpy((char *)&RpcTxBuf[3] + devnamelen, tsqfile, RPC_SIZE_BYTE - 0xDU - devnamelen);
   tsqdrvCallRpc(SNDMOD_TsqfTrns);
 
   memset(RpcTxBuf, 0, RPC_SIZE_BYTE);

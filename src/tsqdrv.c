@@ -113,10 +113,10 @@ int _start(int argc, const char *argv[])
   const char *argval;
 
   const u32 bank = 0U;
-  const u32 tvbaddr = 0x00000000U;
+  const u32 tvbaddr = 0x00085000U;
   const u32 tsqaddr = 0x00000000U;
-  const char *devname = "host:/";
-  const size_t devnamelen = 6U;
+  const char *devname = "host0:/";
+  const size_t devnamelen = 7U;
 
   const char *tsqfile = "BGM.TSQ";
   const char *tvbfile = "BGM.TVB";
